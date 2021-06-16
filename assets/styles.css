@@ -1,0 +1,76 @@
+body {
+    font-family: Tahoma;
+    color: white;
+}
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+}
+  
+.left {
+    left: 0;
+    background-color: #111;
+}
+  
+.right {
+    right: 0;
+    background-color: red;
+}
+  
+.centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+.centered img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+a {
+    text-decoration: none;
+    border: 1rem;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    text-decoration: underline overline #C167F7;
+    font-style: italic;
+}
+
+h1.title {
+    padding: 2rem 0rem;
+    font-size: 4rem;
+    color: black;
+    -webkit-text-fill-color: none; 
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: #ea7ffb;
+}
+
+ul.fighters {
+    list-style-type: none;
+    padding: 0;
+    margin: 0
+}
+
+ul li {
+    border: .1rem solid #8a8a8a;
+    border-radius: .5rem;
+    margin-top: -1px; /* Prevent double borders */
+    background-color: black;
+    padding: 1rem;
+}

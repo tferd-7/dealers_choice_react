@@ -6,7 +6,10 @@ const app = express();
 
 //Front end routes
 //want a static folder to look into dist/
-app.use('/dist', express.static(path.join(__dirname, 'dist')))
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
+
+//need a static directory to expose the assets to the client 
+app.use('/assets', express.static(path.join(__dirname, 'assets')))
 
 //main page
 app.get('/', (req, res, next)=> res.sendFile(path.join(__dirname, 'index.html')))
