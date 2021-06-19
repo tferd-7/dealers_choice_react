@@ -42,11 +42,36 @@ app.get('/api/fighters/:id', async(req, res, next)=> {
     }
 })
 
+//make a new fighter
+app.post('/api/fighters', async(req, res, next) => {
+    try{
+        const fighter = await Fighter.create(req.body);
+        res.send(fighter);
+    }
+    catch(ex){
+        next(ex)
+    }
+})
+
+/*
+//delete a specific fighter
+app.delete('/api/fighters/:id', async(req, res, next) => {
+    try{
+        const fighter  = await Fighter.findByPk(req.params.userId);
+        !fighter ? res.sendStatus(404) : await fighter.destroy(),
+        res.sendStatus(204);
+    }
+    catch(ex){
+        res.sendStatus(400);
+    }
+})
+*/
+
 //initialize
 const init = async() => {
     try {
         await syncAndSeed();
-        const port = process.env.PORT || 3000;
+        const port = process.env.PORT || 3100;
         app.listen(port, ()=> console.log(`listening on port ${port}`))
 
     }

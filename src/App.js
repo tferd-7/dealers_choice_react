@@ -1,6 +1,7 @@
 import React, { Component } from 'react'; //want to have this as a component that will load data
 import axios from 'axios';
 import Fighter from './Fighter';
+import Form from './Form';
 
 
 class App extends Component{
@@ -21,16 +22,18 @@ class App extends Component{
     }
     render(){
         const { fighters, selectedFighterId } = this.state;
+        //console.log(selectedFighterId);
         return (
             <div>
                 <div className='split left'>
                     <div className='centered'>
                         <h1 className='title'>FIGHT NIGHT</h1>
+                        <h4>Choose a Fighter</h4>
                         <ul className='fighters'>
                             {
                                 fighters.map( fighter => {
                                     return (
-                                        <li key={ fighter.id }>
+                                        <li className={ selectedFighterId*1 === fighter.id ? 'selected' : ''}key={ fighter.id }>
                                             <a href={`#${fighter.id}`}>
                                             {fighter.name}
                                             </a>
@@ -38,15 +41,22 @@ class App extends Component{
                                     );
                                 })
                             }
+                            <li className={ selectedFighterId === '' ? 'selected' : ''}>
+                                <a href='#'>
+                                    Create A Fighter
+                                </a>
+                            </li>
                         </ul>
                     </div> 
                 </div>
                 <div className='split right'>
                     <div className='centered'>
-                        <h1>{ selectedFighterId }</h1>
                         <div>
                         {
                             !!selectedFighterId && <Fighter selectedFighterId={ selectedFighterId }/>
+                        }
+                        {
+                            !selectedFighterId && <Form />
                         }
                         </div>
                     </div>

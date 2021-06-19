@@ -18,7 +18,7 @@ body {
   
 .right {
     right: 0;
-    background-color: red;
+    background-color: #121212;
 }
   
 .centered {
@@ -31,7 +31,7 @@ body {
   
 .centered img {
     width: 150px;
-    border-radius: 50%;
+    border-radius: 10%;
 }
 
 a {
@@ -73,4 +73,42 @@ ul li {
     margin-top: -1px; /* Prevent double borders */
     background-color: black;
     padding: 1rem;
+}
+
+.selected {
+    font-weight: bolder;
+}
+
+.selected a {
+    color: #bb86fc;
+}
+
+.bio {
+    font-size: 1.4em;
+}
+
+.signature {
+    padding-top: 1.5rem;
+}
+
+.delete {
+    padding: 2.5rem;
+}
+
+.btn {
+    border: 2px solid #FC5656;
+    background-color: #121212;
+    color: #FC5656;
+    padding: 14px 28px;
+    font-size: 1em;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #FC5656;
+    color: white;
+}
+
+.image {
+    padding: 1.5rem;
 }

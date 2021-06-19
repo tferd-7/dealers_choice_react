@@ -25,6 +25,10 @@ const Fighter = conn.define('fighter', {
         type: TEXT,
         allowNull: false,
         defaultValue: 'Stay tuned to find out the backstory'
+    },
+    imageUrl: {
+        type: STRING,
+        defaultValue: '/assets/defaultUser.png'
     }
 }, {
     hooks: {
@@ -44,23 +48,26 @@ let characters = [
     {
         name: 'kazuya',
         signature: 'demon slayer',
-        bio: 'thrown off a cliff by his father Heihachi and antagonized by his ungrateful son Jin, Kazuya has scores to settle!'
+        bio: 'thrown off a cliff by his father Heihachi and antagonized by his ungrateful son Jin, Kazuya has scores to settle!',
+        imageUrl: "/assets/kazuya.jpeg"
     },
     {
         name: 'ryu',
         signature: 'shinko hadoken',
-        bio: 'determined to win the World Warrior Tournament, Ryu will fight whoever.  you must defeat Sheng Long to stand a chance!'
+        bio: 'determined to win the World Warrior Tournament, Ryu will fight whoever. you must defeat Sheng Long to stand a chance!',
+        imageUrl: "/assets/ryu.jpeg"
     },
     {
         name: 'mike tyson',
         signature: 'right uppercut',
-        bio: 'arguably the most awe-inspiring boxer ever, Iron Mike is now laying siege to virtual opponents. remember to cover your ears!'
-
+        bio: 'arguably the most awe-inspiring boxer ever, Iron Mike is now laying siege to virtual opponents. remember to cover your ears!',
+        imageUrl: "/assets/mikeTyson.jpeg"
     },
     {
         name: 'hunter hearst helmsley',
         signature: 'pedigree',
-        bio: 'he is the game. originally a blue-blooded aristocrat he now runs the show. but he is always spoiling for a fight!'
+        bio: 'he is the game. originally a blue-blooded aristocrat he now runs the show. but he is always spoiling for a fight!',
+        imageUrl: "/assets/tripleH.jpeg"
     }
 ];
 
@@ -71,7 +78,8 @@ const syncAndSeed = async() => {
         characters.map(object => Fighter.create({
             name: object.name,
             signature: object.signature,
-            bio: object.bio
+            bio: object.bio,
+            imageUrl: object.imageUrl,
         }))
     );
 
